@@ -13,23 +13,17 @@ export default function ({
     return;
   } // if url does not have language, redirect to english
   else if (!params.region) {
-    console.log(1)
     let uri = '/' + region + '/' + lang + route.fullPath;
     uri = uri.replace(/\/\/$/g, '/')
-    console.log(uri)
     return redirect(uri);
   } else if (!params.lang) {
-    console.log(2)
     let uri = route.fullPath.replace('/' + region, '')
     uri = '/' + region + '/' + lang + '/' + uri
     uri = uri.replace(/\/\/$/g, '/')
-    console.log(uri)
     return redirect(uri);
   } else if (route.fullPath === '/' + region + '/' + lang) {
     return redirect('/' + region + '/' + lang + '/');
   }
-  console.log(3)
-  console.log(route.fullPath)
 
   store.commit('SET_REGION', region); // set store
   store.commit('SET_LANG', lang); // set store

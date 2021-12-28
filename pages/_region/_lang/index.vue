@@ -25,5 +25,7 @@ export default {
 </script>
 
 <style scoped>
-
+.Content__Title {
+  color: #0074D9;
+}
 </style>
